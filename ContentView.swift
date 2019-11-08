@@ -11,17 +11,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{ // NavigationView 视图
-            List(0..<6){item in // 表单 List
-                NavigationLink(destination: Text("Hello")){ //为列表添加点击事件 NavigationLink
+            List(landmarks){Landmark in // 表单 List
+                NavigationLink(destination: Text(Landmark.name)){ //为列表添加点击事件 NavigationLink
                     
-                    Image("Big Ben(Thumb)") // Image 视图
+                    Image(Landmark.thumbnailName) // Image 视图
                         .cornerRadius(10)
                     
                     VStack(alignment: .leading){ //垂直视图
-                        Text("Hello, World!")   // Text 视图
+                        Text(Landmark.name)   // Text 视图
                             .font(.headline)
                         
-                        Text("你好")
+                        Text(Landmark.EnglishName)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
