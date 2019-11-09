@@ -5,4 +5,4 @@
 
 <br>
 
-![](/Users/hsr/Downloads/QQ20191109-122231-HD.gif)
+![](https://github.com/snowsoar/SwiftUI-Demo/blob/master/IMG/11.gif)
