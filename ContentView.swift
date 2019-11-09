@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{ // NavigationView 视图
             List(landmarks){Landmark in // 表单 List
-                NavigationLink(destination: Text(Landmark.name)){ //为列表添加点击事件 NavigationLink
+                NavigationLink(destination: Details(model: Landmark)){ //为列表添加点击事件 NavigationLink
                     
                     Image(Landmark.thumbnailName) // Image 视图
                         .cornerRadius(10)
