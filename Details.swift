@@ -23,7 +23,7 @@ struct Details: View {
                 .frame(minWidth: 0, idealWidth: 0, maxWidth: .infinity, minHeight: 0, idealHeight: 0, maxHeight: .infinity)
                 .navigationBarTitle(Text(model.name),displayMode: .inline)
                 .onTapGesture { //点击事件 回调
-                    withAnimation(.default) { // 动画
+                    withAnimation(.default) { // 根据条件得到的结果动画
                         self.zoomed.toggle()    // Bool类型值自动切换 false、true
                     }
                     // 值改变后不需要 reload，系统会自动刷新
@@ -33,9 +33,9 @@ struct Details: View {
                     .font(.largeTitle)
                     .foregroundColor(.secondary)
                     .padding()//默认边距
+                    .transition(.move(edge: .trailing)) // 单独设置动画
             }
         }
-        
     }
 }
 

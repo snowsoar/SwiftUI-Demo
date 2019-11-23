@@ -12,20 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{ // NavigationView 视图
             List(landmarks){Landmark in // 表单 List
-                NavigationLink(destination: Details(model: Landmark)){ //为列表添加点击事件 NavigationLink
-                    
-                    Image(Landmark.thumbnailName) // Image 视图
-                        .cornerRadius(10)
-                    
-                    VStack(alignment: .leading){ //垂直视图
-                        Text(Landmark.name)   // Text 视图
-                            .font(.headline)
-                        
-                        Text(Landmark.EnglishName)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                }
+                cell(landmark: Landmark)    // command ----> Extrect Subview  分离
             }.navigationBarTitle("地标")
         }
     }
@@ -34,5 +21,24 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct cell: View {
+    let landmark:Landmark
+    var body: some View {
+        NavigationLink(destination: Details(model: landmark)){ //为列表添加点击事件 NavigationLink
+            Image(landmark.thumbnailName) // Image 视图
+                .cornerRadius(10)
+            
+            VStack(alignment: .leading){ //垂直视图
+                Text(landmark.name)   // Text 视图
+                    .font(.headline)
+                
+                Text(landmark.EnglishName)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
     }
 }
