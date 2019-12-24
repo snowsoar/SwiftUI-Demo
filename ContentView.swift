@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView{ // NavigationView 视图
+        NavigationView{ // NavigationView 视图·
             List(landmarks){Landmark in // 表单 List
                 cell(landmark: Landmark)    // command ----> Extrect Subview  分离
             }.navigationBarTitle("地标")
